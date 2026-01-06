@@ -1,7 +1,7 @@
 # Insurance-Claim-Agent-HOL
 ## Insurance Claims Agent – Hands on Lab Steps (Sections 1–7)
 
-This guide focuses on the **Snowflake Cortex AI capabilties and Snowflake Intelligence**.
+# Lab Instructions
 ---
 
 ## 1. Parse Documents with Cortex (PARSE_DOCUMENT & EXTRACT_ANSWER)
