@@ -2,6 +2,18 @@
 ## Insurance Claims Agent – Hands on Lab Steps (Sections 1–7)
 
 # Lab Instructions
+
+### Prerequisite: Upload and Open the Lab Notebook
+
+Before starting these steps:
+- In Snowsight, go to **Projects → Notebooks**, click the arrow next to the **“+ Notebook”** button, and select **Import .ipynb file**.
+- Choose the local `INSURANCE_CLAIMS_HOL.ipynb` file, and when prompted, specify:
+  - **Database**: `INSURANCE_CLAIMS_DEMO`
+  - **Schema**: `LOSS_CLAIMS`
+  - **Warehouse**: `CLAIMS_AGENT_WH` (or another warehouse with similar size/permissions)
+- After import, open the notebook
+
+Once the notebook is uploaded and the context is set, you can follow the sections below in order.
 ---
 
 ## 1. Parse Documents with Cortex AISQL (PARSE_DOCUMENT & EXTRACT_ANSWER)
