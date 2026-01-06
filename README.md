@@ -4,7 +4,7 @@
 # Lab Instructions
 ---
 
-## 1. Parse Documents with Cortex (PARSE_DOCUMENT & EXTRACT_ANSWER)
+## 1. Parse Documents with Cortex AISQL (PARSE_DOCUMENT & EXTRACT_ANSWER)
 
 ### Goal
 - Convert uploaded claim artifacts (notes, guidelines, invoices) in the `LOSS_EVIDENCE` stage into **queryable tables**:
