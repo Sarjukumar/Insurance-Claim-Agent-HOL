@@ -133,17 +133,34 @@ Define **`CA_INSURANCE_CLAIMS_DEMO`** – a semantic view that tells Cortex Anal
 - Which columns are facts, dimensions, and time dimensions.
 
 ### Highlights
-- Tables: `AUTHORIZATION`, `CLAIMS`, `CLAIM_LINES`, `FINANCIAL_TRANSACTIONS`, `INVOICES`.
-- Relationships:
-  - Links claim headers to lines, lines to financials, and lines to invoices and authorization.
-- Facts:
+- **Tables**: `AUTHORIZATION`, `CLAIMS`, `CLAIM_LINES`, `FINANCIAL_TRANSACTIONS`, `INVOICES`.
+- **Relationships**:
+  - Links **claim headers** to **lines**, lines to **financials**, and lines to **invoices** and **authorization**.
+- **Facts**:
   - E.g., `FIN_TX_AMT`, `INVOICE_AMOUNT`, `FROM_AMT`, `TO_AMT`.
-- Dimensions:
+- **Dimensions**:
   - Claim identifiers, statuses, dates, vendors, currencies, etc., with rich synonyms.
-- Extension metadata:
+- **Extension metadata**:
   - **Sample values** and **verified queries** for common audit questions, e.g.:
     - “Was a payment made in excess of the performer authority?”
     - “Was a payment issued to the vendor 30+ days after the invoice date?”
+
+### Core claims data model (high-level relationships)
+
+The core structured tables loaded in **Step 0** form a simple star of relationships around `CLAIMS`:
+
+```mermaid
+erDiagram
+  CLAIMS ||--o{ CLAIM_LINES : "CLAIM_NO"
+  CLAIM_LINES ||--o{ FINANCIAL_TRANSACTIONS : "LINE_NO"
+  CLAIM_LINES ||--o{ INVOICES : "LINE_NO"
+  AUTHORIZATION ||--o{ CLAIM_LINES : "PERFORMER_ID"
+```
+
+- **`CLAIMS` → `CLAIM_LINES`**: One claim header can have many claim lines (per damage or service).
+- **`CLAIM_LINES` → `FINANCIAL_TRANSACTIONS`**: Each claim line can have multiple reserves/payments.
+- **`CLAIM_LINES` → `INVOICES`**: Each claim line can have multiple invoice line items from vendors.
+- **`AUTHORIZATION` → `CLAIM_LINES`**: Each performer’s authorization band applies to many claim lines via `PERFORMER_ID`.
 
 ### What to run
 In the notebook:
