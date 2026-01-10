@@ -2,7 +2,7 @@
 
 ## What this lab is about
 
-This hands-on lab walks you through building an **end-to-end Insurance Claims Agent in Snowflake** that can audit and explain insurance claims using:
+This hands-on lab walks you through building an **End-to-End Insurance Claims Agent in Snowflake** that can audit and explain insurance claims using:
 
 - **Structured data**: claims, claim lines, financial transactions, authorizations, invoices  
 - **Unstructured content**: PDFs, images, audio files, and guidelines stored in a Snowflake stage  
