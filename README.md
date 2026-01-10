@@ -18,7 +18,7 @@ By the end of the lab, you will have a **Snowflake Intelligence agent** that can
 The goal is to show how to combine **Cortex Analyst (text-to-SQL)**, **Cortex Search (RAG over documents)**, and **Cortex AISQL functions** into a single, auditable claims assistant.
 
 ---
-## Insurance Claims Agent – Hands on Lab Steps (Sections 1–7)
+## Insurance Claims Agent – Hands on Lab Steps (Sections 1–6)
 
 # Lab Instructions
 
@@ -57,7 +57,7 @@ Once the notebook is uploaded and the context is set, you can follow the section
 
 ### What to run in the notebook
 In `insurance_claims_lab.ipynb`:
-1. **Section 3 markdown** – read the explanation of PARSE_DOCUMENT and EXTRACT_ANSWER.
+1. **Section 1 markdown** – read the explanation of PARSE_DOCUMENT and EXTRACT_ANSWER.
 2. Run the three SQL cells:
    - Create and populate `PARSED_CLAIM_NOTES` (notes + extracted `CLAIM_NO`).
    - Create and populate `PARSED_GUIDELINES` (guideline text).
@@ -91,7 +91,7 @@ In `insurance_claims_lab.ipynb`:
 
 ### What to run
 In the notebook:
-1. Read **Section 4 markdown** for Cortex Search overview.
+1. Read **Section 2 markdown** for Cortex Search overview.
 2. Run SQL cells to:
    - Create `NOTES_CHUNK_TABLE` from `PARSED_CLAIM_NOTES`.
    - Create `GUIDELINES_CHUNK_TABLE` from `PARSED_GUIDELINES`.
@@ -131,7 +131,7 @@ Create reusable **SQL functions** and a **stored procedure** that the agent and 
 
 ### What to run
 In the notebook:
-1. Read **Section 5 markdown** for a summary of each function/procedure.
+1. Read **Section 3 markdown** for a summary of each function/procedure.
 2. Run the SQL cells to create:
    - `CLASSIFY_DOCUMENT`
    - `PARSE_DOCUMENT_FROM_STAGE`
@@ -166,7 +166,7 @@ Define **`CA_INSURANCE_CLAIMS_DEMO`** – a semantic view that tells Cortex Anal
 
 ### Core claims data model (high-level relationships)
 
-The core structured tables loaded in **Step 0** form a simple star of relationships around `CLAIMS`:
+The core structured tables loaded in **Step 0 (prereq)** form a simple star of relationships around `CLAIMS`:
 
 ```mermaid
 erDiagram
@@ -183,7 +183,7 @@ erDiagram
 
 ### What to run
 In the notebook:
-1. Read **Section 6 markdown** to understand the semantic view concept.
+1. Read **Section 4 markdown** to understand the semantic view concept.
 2. Run the SQL cell that creates `CA_INSURANCE_CLAIMS_DEMO`.
 
 > Docs reference: `https://docs.snowflake.com` → search for  
@@ -215,7 +215,7 @@ Create `CLAIMS_AUDIT_AGENT`, a **Snowflake Intelligence Agent** that:
 
 ### What to run
 In the notebook:
-1. Read **Section 7 markdown** for the high‑level picture of Snowflake Intelligence Agents.
+1. Read **Section 5 markdown** for the high‑level picture of Snowflake Intelligence Agents.
 2. Run the SQL cell that issues `CREATE OR REPLACE AGENT ... FROM SPECIFICATION $$ { ... } $$`.
 
 > Docs reference: `https://docs.snowflake.com` → search for  
@@ -236,8 +236,7 @@ Make `CLAIMS_AUDIT_AGENT` available in the **Snowflake Intelligence** UI and API
 
 ### What to run
 In the notebook:
-1. Ensure you are using **`ACCOUNTADMIN`** (or equivalent).
-2. Run the SQL cell in **Section 9** to:
+2. Run the SQL cell in **Section 6** to:
    - Create `ADD_AGENT_TO_INTELLIGENCE`.
    - Execute `CALL INSURANCE_CLAIMS_DEMO.LOSS_CLAIMS.ADD_AGENT_TO_INTELLIGENCE();`.
 
