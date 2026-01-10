@@ -1,4 +1,23 @@
-# Insurance-Claim-Agent-HOL
+# Insurance Claims Agent – Hands-On Lab
+
+## What this lab is about
+
+This hands-on lab walks you through building an **end-to-end Insurance Claims Agent in Snowflake** that can audit and explain insurance claims using:
+
+- **Structured data**: claims, claim lines, financial transactions, authorizations, invoices  
+- **Unstructured content**: PDFs, images, audio files, and guidelines stored in a Snowflake stage  
+- **AI helpers**: functions for document classification, parsing, image summarization, and call transcription
+
+By the end of the lab, you will have a **Snowflake Intelligence agent** that can answer questions such as:
+
+- Was a payment made in excess of the performer authority?  
+- Was a payment issued to the vendor 30+ calendar days after the invoice date?  
+- Is claim 1899 complete?  
+- What does a particular evidence image or call recording say about the claim?
+
+The goal is to show how to combine **Cortex Analyst (text-to-SQL)**, **Cortex Search (RAG over documents)**, and **Cortex AISQL functions** into a single, auditable claims assistant.
+
+---
 ## Insurance Claims Agent – Hands on Lab Steps (Sections 1–7)
 
 # Lab Instructions
